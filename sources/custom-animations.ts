@@ -608,6 +608,16 @@ const customAnimations: Record<string, CustomAnimationDefinition> = {
       ],
     ],
   },
+  continuing_thrust: {
+    frameSize: 128,
+    sourceSingleAnimation: true,
+    frames: [
+      Array.from({ length: 13 }, (_, i) => `continuing-thrust-n,${i}`),
+      Array.from({ length: 13 }, (_, i) => `continuing-thrust-w,${i}`),
+      Array.from({ length: 13 }, (_, i) => `continuing-thrust-s,${i}`),
+      Array.from({ length: 13 }, (_, i) => `continuing-thrust-e,${i}`),
+    ],
+  },
   tool_hammer: {
     frameSize: 128,
     sourceSingleAnimation: true,
