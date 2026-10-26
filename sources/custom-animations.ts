@@ -34,6 +34,8 @@ export type CustomAnimationDefinition = {
   /** When true, frames are extracted from a 4-row (n/w/s/e) source sprite
    * rather than expecting the sprite to already match the custom animation layout. */
   sourceSingleAnimation?: boolean;
+  /** Standard animation used to determine item compatibility in the animation filter. */
+  baseAnimation?: string;
 };
 
 const customAnimations: Record<string, CustomAnimationDefinition> = {
@@ -611,6 +613,7 @@ const customAnimations: Record<string, CustomAnimationDefinition> = {
   continuing_thrust: {
     frameSize: 128,
     sourceSingleAnimation: true,
+    baseAnimation: "thrust",
     frames: [
       Array.from({ length: 13 }, (_, i) => `continuing-thrust-n,${i}`),
       Array.from({ length: 13 }, (_, i) => `continuing-thrust-w,${i}`),
@@ -678,7 +681,7 @@ const customAnimationSize = (
 });
 
 const customAnimationBase = (custAnim: CustomAnimationDefinition): string =>
-  custAnim.frames[0][0].split(",")[0].split("-")[0];
+  custAnim.baseAnimation ?? custAnim.frames[0][0].split(",")[0].split("-")[0];
 
 // Expose for use in other scripts
 export {
