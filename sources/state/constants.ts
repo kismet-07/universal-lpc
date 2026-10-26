@@ -60,6 +60,7 @@ export const LICENSE_CONFIG = [
 export const ANIMATIONS = [
   { value: "spellcast", label: "Spellcast" },
   { value: "thrust", label: "Thrust" },
+  { value: "continuing_thrust", label: "Continuing Thrust" },
   { value: "walk", label: "Walk" },
   { value: "slash", label: "Slash" },
   { value: "shoot", label: "Shoot" },
